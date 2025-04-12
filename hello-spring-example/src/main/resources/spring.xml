@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Address Bean -->
+    <bean id="address" class="com.sachin.spring.model.Address">
+        <property name="addressLine1" value="Gali number 03"/>
+        <property name="addressLine2" value="Varanasi"/>
+        <property name="city" value="Uttar Pradesh"/>
+    </bean>
+
+    <bean id="addressService" class=" com.sachin.spring.service.AddressService"/>
+
+    <bean id ="booking" class="com.sachin.spring.model.Booking">
+        <property name="price" value="100.00"/>
+        <property name="id" value="20"/>
+        <property name="address"  ref="address"/>
+    </bean>
+
+    <bean id="bookingService" class=" com.sachin.spring.service.BookingService"/>
+
+</beans>
