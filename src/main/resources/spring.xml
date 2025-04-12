@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           https://www.springframework.org/schema/beans/spring-beans.xsd">
+        <!-- Student Bean -->
+<bean id="student" class="com.student.management.model.Student">
+<property name="idStudent" value="01"/>
+<property name="name" value="Sachin"/>
+<property name="address" value="Pune"/>
+<property name="phoneNumber" value="8756546248"/>
+</bean>
+
+<bean id="studentService" class="com.student.management.service.StudentService"/>
+
+    <bean id="college" class="com.student.management.model.College">
+        <property name="collegeId" value="01"/>
+        <property name="collegeName" value="PRSU"/>
+        <property name="principleName" value="Prof.Vinay"/>
+        <property name="address" value="Delhi"/>
+        <property name="phoneNumber" value="9876543210"/>
+        <property name="student" ref="student"/>
+    </bean>
+
+    <bean id="collegeService" class="com.student.management.service.CollegeService"/>
+
+
+</beans>
